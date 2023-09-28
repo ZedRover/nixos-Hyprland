@@ -9,8 +9,8 @@
   ];
 
   home = {
-    username = "enzo";
-    homeDirectory = "/home/enzo";
+    username = "zed";
+    homeDirectory = "/home/zed";
   };
 
   home.packages = (with pkgs; [

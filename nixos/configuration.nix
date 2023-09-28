@@ -55,24 +55,6 @@
   };
 
   #NvidiaConfig
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "#nvidia-x11"
-    ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = false;
-
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
-  };
 
   programs.steam = {
    enable = true;
@@ -102,9 +84,9 @@
    NIXPKGS_ALLOW_UNFREE = "1";
   };
   
-  users.users.enzo = {
+  users.users.zed = {
     isNormalUser = true;
-    description = "Enzo";
+    description = "zed";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       firefox
